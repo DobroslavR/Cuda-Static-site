@@ -1,0 +1,788 @@
+@charset "UTF-8";
+/*
+Theme Name: Cuda Project
+Theme URI: http://radosavljevic.cz/
+Author: Dobroslav Radosavljevič
+Author URI: http://radosavljevic.cz/
+Description: Cuda Project
+Version: 1.0
+Text Domain: --
+Tags: --
+*/
+/*--------------------------------------------------------------
+>>> CSS RESET
+--------------------------------------------------------------*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  color: #000;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+/* For responsive design */
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+/*--------------------------------------------------------------
+>>> #1.0 - BASE CSS
+--------------------------------------------------------------*/
+body {
+  font-family: 'Titillium Web', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container-lg {
+  max-width: 68.75em;
+  height: auto;
+  margin: 0 auto;
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.section-heading {
+  font-size: 2.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  text-align: center;
+}
+
+.section-heading:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  top: 1.5em;
+  width: 2.125em;
+  height: 0.1em;
+  background: #000;
+  opacity: 0.2;
+}
+
+.section-para {
+  text-align: center;
+  font-size: 1.125em;
+  margin-top: 2.66667em;
+  line-height: 1.44444em;
+  letter-spacing: 0.03333em;
+}
+
+/*--------------------------------------------------------------
+>>> #2.0 - HEADER
+--------------------------------------------------------------*/
+.header {
+  width: 100%;
+  height: 43.75em;
+  background: #87509c;
+  color: #fff;
+  padding-top: 3.75em;
+}
+
+.header-top {
+  max-width: 68.75em;
+  height: 2.5em;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.header-logo {
+  background: url(../img/logo.svg);
+  background-repeat: no-repeat;
+  width: 7.5em;
+  height: 100%;
+  text-indent: -62499.9375em;
+  cursor: pointer;
+}
+
+.header-navigation {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header-navigation li:last-child a {
+  margin: 0;
+}
+
+.header-navigation a {
+  color: #fff;
+  padding: 0.5em 1.25em;
+  border-radius: 0.3125em;
+  margin-right: 1.25em;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  text-transform: uppercase;
+}
+
+.header-navigation a:hover {
+  background: #643a79;
+}
+
+.header-heading {
+  text-align: center;
+  font-size: 2.625em;
+  padding: 4.7619em 0em 1.30952em 0em;
+}
+
+.header-button {
+  text-transform: uppercase;
+  font-size: 1.125em;
+  padding: 1.38889em 4.44444em;
+  background: #eb7d4b;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.33333em;
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.header-button:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/*--------------------------------------------------------------
+>>> #3.0 - SECTION SERVICES
+--------------------------------------------------------------*/
+.services {
+  width: 100%;
+  height: 46.875em;
+  background: #17c2a4;
+  color: #fff;
+  padding-top: 5.3125em;
+}
+
+.services-list {
+  max-width: 68.75em;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 5em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.services-list-item {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.services-list-item img {
+  max-width: 17.1875em;
+  height: 9.0625em;
+}
+
+.services-list-item h3 {
+  font-size: 1.5em;
+  margin-top: 2.29167em;
+  text-transform: uppercase;
+}
+
+.services-list-item p {
+  font-weight: 300;
+  line-height: 1.5em;
+  margin-top: 1.5625em;
+  padding: 0em 2.5em;
+}
+
+/*--------------------------------------------------------------
+>>> #3.0 - SECTION TEAM
+--------------------------------------------------------------*/
+.team {
+  width: 100%;
+  height: 57.1875em;
+  background: #e7f1f8;
+  padding-top: 5.3125em;
+  color: #3c4761;
+}
+
+.team-list {
+  max-width: 68.75em;
+  height: auto;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5em;
+}
+
+.team-list-item {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.team-list-item img {
+  width: 12.5em;
+  height: 12.5em;
+  border-radius: 50%;
+}
+
+.team-list-item h3 {
+  font-size: 1.5em;
+  margin-top: 1.66667em;
+  text-transform: uppercase;
+}
+
+.team-list-item h4 {
+  font-weight: 600;
+  color: #30bae7;
+  margin-top: 0.5em;
+}
+
+.team-list-item p {
+  margin-top: 1.25em;
+  font-weight: 400;
+  padding: 0 2.5em;
+  line-height: 1.5em;
+}
+
+.team-list-item ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1.875em;
+}
+
+.team-list-item ul li {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: #bdd1df;
+  margin-right: 0.75em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  cursor: pointer;
+}
+
+.team-list-item ul li .fa-facebook-f,
+.team-list-item ul li .fa-twitter,
+.team-list-item ul li .fa-linkedin-in,
+.team-list-item ul li .fa-envelope {
+  color: #fff;
+}
+
+.team-list-item ul li:last-child {
+  margin: none;
+}
+
+/*--------------------------------------------------------------
+>>> #3.0 - SECTION SKILLS
+--------------------------------------------------------------*/
+.skills {
+  width: 100%;
+  height: 40.625em;
+  background: #fff;
+  padding-top: 5.3125em;
+  color: #3c4761;
+}
+
+.skills-list {
+  max-width: 68.75em;
+  margin: 0 auto;
+  height: auto;
+  margin-top: 5.3125em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.skills-list-item {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.skills-list-item div {
+  width: 12.5em;
+  height: 12.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 0.8125em solid #e7f1f8;
+  border-radius: 50%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.skills-list-item div span {
+  font-size: 3.125em;
+  font-weight: 300;
+}
+
+.skills-list-item div span:after {
+  content: "%";
+  font-size: 0.64em;
+}
+
+.skills-list-item h3 {
+  font-size: 1.5em;
+  margin-top: 1.29167em;
+  text-transform: uppercase;
+}
+
+/*--------------------------------------------------------------
+>>> #4.0 - SECTION PORTFOLIO
+--------------------------------------------------------------*/
+.portfolio {
+  width: 100%;
+  height: 89.0625em;
+  background: #ffdd99;
+  color: #393939;
+  padding-top: 5.3125em;
+}
+
+.portfolio-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 2.625em;
+}
+
+.portfolio-filter li {
+  padding: 0.55556em 1.38889em;
+  font-size: 1.125em;
+  margin: 0 0.27778em;
+  background: #ebcb8d;
+  text-transform: uppercase;
+  border-radius: 0.22222em;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.portfolio-filter li:hover {
+  background: #fff;
+}
+
+.portfolio-filter li:first-child {
+  background: #fff;
+}
+
+.portfolio-gallery {
+  max-width: 68.75em;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  grid-column-gap: 1.25em;
+  grid-row-gap: 4em;
+  margin-top: 3.875em;
+  margin-bottom: 5.1875em;
+}
+
+.portfolio-gallery-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.portfolio-gallery-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.portfolio-gallery-item figcaption {
+  margin-top: 1.77778em;
+  font-size: 1.125em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.02778em;
+}
+
+.portfolio-button {
+  font-size: 1.125em;
+  padding: 1.55556em 3.22222em;
+  background: #17c2a4;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.02778em;
+  border-radius: 0.33333em;
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  cursor: pointer;
+}
+
+.portfolio-button:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/*--------------------------------------------------------------
+>>> #5.0 - SECTION WHAT PEOPLE SAY
+--------------------------------------------------------------*/
+.about-us {
+  width: 100%;
+  height: 55.9375em;
+  padding-top: 5.3125em;
+  background: #d74680;
+  color: #fff;
+}
+
+.about-us-people-list {
+  max-width: 68.75em;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 4.375em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 7.5em;
+  grid-row-gap: 9.375em;
+}
+
+.about-us-people-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.about-us-people-list-item p {
+  font-size: 1.3125em;
+  font-style: italic;
+  line-height: 1.47619em;
+}
+
+.about-us-people-list-item img {
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+}
+
+.about-us-people-list-item h3 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin-top: 1.16667em;
+}
+
+.about-us-people-list-item h4 {
+  font-size: 1.125em;
+  font-weight: 400;
+  color: #ffdd99;
+  margin-top: 0.55556em;
+}
+
+.people-item-wrapper {
+  margin-left: 3em;
+}
+
+/*--------------------------------------------------------------
+>>> #5.0 - SECTION GET IN TOUCH
+--------------------------------------------------------------*/
+.get-in-touch {
+  width: 100%;
+  height: 51.25em;
+  padding-top: 5.3125em;
+  background: #3c5499;
+  color: #fff;
+}
+
+.get-in-touch-form {
+  max-width: 53.75em;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 4.6875em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 3.5em 15.625em 4.375em;
+  grid-column-gap: 2em;
+  grid-row-gap: 1.6875em;
+}
+
+.get-in-touch-form > * {
+  border-radius: 0.375em;
+  padding: 1.25em;
+  border: none;
+  color: #fff;
+  background: #273a71;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.get-in-touch-form ::-webkit-input-placeholder {
+  color: #fff;
+  font-size: 1.125em;
+}
+
+.get-in-touch-form :-ms-input-placeholder {
+  color: #fff;
+  font-size: 1.125em;
+}
+
+.get-in-touch-form ::-ms-input-placeholder {
+  color: #fff;
+  font-size: 1.125em;
+}
+
+.get-in-touch-form ::placeholder {
+  color: #fff;
+  font-size: 1.125em;
+}
+
+.get-in-touch-form textarea {
+  grid-column: span 2;
+  resize: none;
+}
+
+.get-in-touch-form button {
+  grid-column: span 2;
+  background: #30bae7;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.125em;
+}
+
+/*--------------------------------------------------------------
+>>> #6.0 - FOOTER
+--------------------------------------------------------------*/
+.footer {
+  width: 100%;
+  height: 6.25em;
+  background: #344b8e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.footer-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.footer-social a {
+  margin: 0 1.19048em;
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  font-size: 1.3125em;
+  color: #fff;
+}
+
+.footer-social a:hover {
+  color: #30bae7;
+}
+
+@media screen and (max-width: 71.875em) {
+  .header-top {
+    padding: 0 1.25em;
+  }
+  .services {
+    padding: 5.3125em 6.25em;
+    height: auto;
+  }
+  .services-list {
+    grid-row-gap: 2.5em;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
